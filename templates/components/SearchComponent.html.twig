@@ -1,3 +1,14 @@
 <div {{ attributes }}>
-    {{ this.allviews }}
+    <h1>Search Live Component</h1>
+
+    <div class="live-search">
+        <input class="live-input" type="search" data-model="query">
+        <p class="live-p">Vous avez recherché : {{ query }}</p>
+    </div>
+
+    {% for post in this.allPosts %}
+        {{ component('SimpleCardComponent', {
+            id: post.id
+        }) }}
+    {% endfor %}
 </div>

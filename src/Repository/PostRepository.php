@@ -2,47 +2,31 @@
 
 namespace App\Repository;
 
-use App\Entity\Compteur;
+use App\Entity\Post;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Compteur>
+ * @extends ServiceEntityRepository<Posts>
  *
- * @method Compteur|null find($id, $lockMode = null, $lockVersion = null)
- * @method Compteur|null findOneBy(array $criteria, array $orderBy = null)
- * @method Compteur[]    findAll()
- * @method Compteur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Posts|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Posts|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Posts[]    findAll()
+ * @method Posts[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CompteurRepository extends ServiceEntityRepository
+class PostRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Compteur::class);
+        parent::__construct($registry, Post::class);
     }
 
-//    /**
-//     * @return Compteur[] Returns an array of Compteur objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Compteur
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+   public function findByQuery (string $query) {
+      return $this->createQueryBuilder('c')
+            ->andWhere('c.title LIKE :query')
+            ->setParameter('query', '%' . $query . '%')
+            ->getQuery()
+            ->setMaxResults(4)
+            ->getResult();
+   }
 }

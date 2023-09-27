@@ -1,8 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
 {% block body %}
     <h1>Hello</h1>
-    <div {{ react_component('TodoList') }}></div>
+
+    {{ component('SimpleCardComponent', {
+        id: 1
+    }) }}
+
+    {{ component('SimpleCardComponent', {
+        id: 1
+    }) }}
+
+    {{ component('SimpleCardComponent', {
+        id: 1
+    }) }}
+
+    {{ component('SimpleCardComponent', {
+        id: 1
+    }) }}
+
+    {{ component('SimpleCardComponent', {
+        id: 1
+    }) }}
+
+    {{ component('SimpleCardComponent', {
+        id: 1
+    }) }}
+
 {% endblock %}

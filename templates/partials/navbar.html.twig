@@ -1,0 +1,16 @@
+{% if app.request.get('_route') == 'home.home' %}
+    {% set route = '/' %}
+{% elseif app.request.get('_route') == 'home.search' %}
+    {% set route = '/search' %}
+{% elseif app.request.get('_route') == 'home.todolist' %}
+    {% set route = '/todolist' %}
+{% endif %}
+<div {{ react_component('MyNavbar', {
+    route,
+    links: {
+        Home: path('home.home'),
+        Search: path('home.search'),
+        Todolist: path('home.todolist')
+    }
+})
+}}></div>

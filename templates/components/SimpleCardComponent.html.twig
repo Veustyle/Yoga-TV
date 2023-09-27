@@ -1,3 +1,8 @@
-<div{{ attributes }}>
-    <!-- component html -->
+<div {{ attributes }} class="container-card">
+    <h1>My Card Component</h1>
+
+    {% if this.post %}
+        <p>{{ this.post.title }}</p>
+        <p>{{ this.post.content }}</p>
+    {% endif %}
 </div>

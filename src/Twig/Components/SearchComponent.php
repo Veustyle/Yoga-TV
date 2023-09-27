@@ -2,7 +2,7 @@
 
 namespace App\Twig\Components;
 
-use App\Repository\CompteurRepository;
+use App\Repository\PostRepository;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
@@ -12,12 +12,12 @@ final class SearchComponent
 {
     use DefaultActionTrait;
 
-    #[LiveProp]
-    public int $total = 0;
+    #[LiveProp(writable: true)]
+    public string $query = '';
 
-    public function __construct (private readonly CompteurRepository $repository) {}
+    public function __construct (private readonly PostRepository $repository) {}
 
-   public function getAllViews () : ?int {
-       return count($this->repository->findAll());
+   public function getAllPosts () {
+       return $this->repository->findByQuery($this->query);
    }
 }

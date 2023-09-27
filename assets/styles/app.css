@@ -1,0 +1,199 @@
+body {
+    background-color: lightgray;
+    margin: 60px 0 0 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    text-align: center;
+}
+/********** NAVBAR **********/
+.my-header {
+    height: 40px;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border: 1px solid black;
+    box-shadow: -1px 2px 0px 0px #000000;
+    transition: all 1s ease-in-out;
+}
+.my-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-right: 80px;
+}
+.my-navlink {
+    padding: 10px;
+}
+.my-navlink {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.my-navlink:visited {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.my-navbar .my-active {
+    color: black;
+}
+.my-h-visible {
+    top: 0;
+}
+.my-h-invisible {
+    top: -35px;
+}
+/********* Burger **********/
+.my-burger {
+    width: 80px;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: lightgray;
+    border: 1px solid black;
+}
+.my-burger svg {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.my-burger-open {
+    position: absolute;
+    color: black;
+    z-index: 1000;
+    top: 8px;
+    right: 20px;
+}
+.my-burger-close {
+    position: absolute;
+    color: black;
+    z-index: 1000;
+    top: 10px;
+    right: 20px;
+}
+.my-burger .my-search-svg {
+    position: absolute;
+    left: 7px;
+    top: 11px;
+}
+.my-display-none {
+    display: none!important;
+}
+/*********** SEARCH ************/
+.my-search {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1200;
+    background-color: rgba(0, 0, 0, .7);
+}
+.my-search-bar {
+    position: fixed;
+    top: 40px;
+    left: 30%;
+    right: 30%;
+    display: flex;
+    z-index: 2500;
+    opacity: 1;
+}
+.my-search-bar input {
+    width: 350px;
+    height: 30px;
+    text-align: center;
+}
+/*********** MENU DEROULANT *************/
+.my-menu-deroulant {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 500;
+    height: 400px;
+    width: 250px;
+    background-color: lightgray;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+}
+.my-menulink {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    opacity: 0;
+}
+.my-menulink:visited {
+    text-decoration: none;
+    color: black;
+}
+.my-menulink.my-active {
+    color: whitesmoke!important;
+}
+/********** CARD COMPONENT **********/
+.container-card {
+    border: 1px solid black;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/************ LIVE COMPONENT ***********/
+.live-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/********** TODOLIST REACT Rxjs **************/
+.container-todolist {
+    margin: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 20px;
+}
+.todo-item button, .todo-item p {
+    margin-left: 10px;
+}
+.todo-form {
+    display: flex;
+    justify-content: center;
+}
+.todo-form input {
+    height: 30px;
+    text-align: center;
+}
+/*********** FOOTER *************/
+.my-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 30px;
+    transition: all 1s ease-in-out;
+    background-color: grey;
+    box-shadow: 0px -2px 0px 0px #000000;
+}
+.my-footer p {
+    text-align: center;
+    padding: 0;
+    margin: 5px 0 0 0;
+    font-weight: bolder;
+}
+.my-f-visible {
+    bottom: 0;
+}
+.my-f-invisible {
+    bottom: -27px;
+}
